@@ -1,0 +1,1022 @@
+{
+  "contractName": "BaseStructs",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"custom:security-contact\":\"giorgio@allena.it\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Avatar/BaseStructs.sol\":\"BaseStructs\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Avatar/BaseStructs.sol\":{\"keccak256\":\"0x6448fc8196cf0f1f64d53263b494322c9d6005c40d37897068c1efaddcb13e0f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c853dd06836c6b423eaa4cf1494481b1c043688c6ea74875bb918c694b7f1878\",\"dweb:/ipfs/QmToXTicqwfYN8cbwcXbMP4SvhJr5ziCsFQ2NaH9dK8Gx3\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212206368adaf7d25a70515c4b5432375bc527b434ff1b5dbdf4425765b73d6c5aa3664736f6c63430008130033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212206368adaf7d25a70515c4b5432375bc527b434ff1b5dbdf4425765b73d6c5aa3664736f6c63430008130033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "108:1700:31:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "108:1700:31:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\n/// @custom:security-contact giorgio@allena.it\r\ncontract BaseStructs {\r\n\r\n    struct Avatar {\r\n        string name; \r\n        uint256 id;\r\n        \r\n        uint256 level;\r\n\r\n        // AvatarRarity int\r\n        uint ar;\r\n        // TODO: stoneSlot\r\n        uint256[5] stoneType;\r\n        uint256[5] stone;\r\n\r\n        // TODO: Wearables\r\n        uint256[3] wearables;\r\n\r\n        // TODO: Numero di volte in cui è stata mintata\r\n        bool alreadyMinted;\r\n\r\n        // TODO: add address of smart contract !!!\r\n\r\n    }\r\n\r\n    struct Stone {\r\n        string name; \r\n        uint256 id;\r\n        \r\n        uint256 level;\r\n\r\n        // AvatarRarity int\r\n        uint ar;\r\n        // TODO: stoneSlot\r\n\r\n        // TODO: add address of smart contract !!!\r\n        // StoneType TYPE\r\n        uint256 stoneType;\r\n    }\r\n\r\n    struct Wearable  {\r\n        string name; \r\n        uint256 id;\r\n                \r\n        // AvatarRarity int\r\n        uint ar;\r\n        \r\n        // WearableType \r\n        uint256 wearableType;\r\n    }\r\n\r\n    struct NFTPoolInfo {\r\n        uint256 quantity;\r\n        uint256 cost;\r\n    }\r\n\r\n    enum WearableType {\r\n        // TODO: dA MOdificare in cappello ... \r\n        HEAD,\r\n        BODY,\r\n        LEGS\r\n    }\r\n\r\n    enum StoneType {\r\n        REPARITE,\r\n        ENIGMA,\r\n        STRATAGEM,\r\n        CHIPPYFY,\r\n        VICTORIUM       // Da modificare !!!\r\n    }\r\n\r\n    struct RarityRow {\r\n        uint256 rarity2;\r\n        uint256[] boxRarity;\r\n    }\r\n\r\n    struct BoxInfo {\r\n        uint256 tokenRarity;\r\n        uint256 objKey;\r\n\r\n        bool boxInfoCheck;\r\n    }\r\n\r\n    enum AvatarRarity {\r\n        FREE,\r\n        COMMON, \r\n        UNCOMMON, \r\n        PRIME,\r\n        RARE,\r\n        EPIC,\r\n        LEGGENDARY\r\n    }\r\n\r\n}",
+  "sourcePath": "D:\\Lavoro\\21_BJ\\21_BJ_SC\\contracts\\Avatar\\BaseStructs.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Avatar/BaseStructs.sol",
+    "exportedSymbols": {
+      "BaseStructs": [
+        5444
+      ]
+    },
+    "id": 5445,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5363,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:31"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "BaseStructs",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 5364,
+          "nodeType": "StructuredDocumentation",
+          "src": "60:48:31",
+          "text": "@custom:security-contact giorgio@allena.it"
+        },
+        "fullyImplemented": true,
+        "id": 5444,
+        "linearizedBaseContracts": [
+          5444
+        ],
+        "name": "BaseStructs",
+        "nameLocation": "117:11:31",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "BaseStructs.Avatar",
+            "id": 5387,
+            "members": [
+              {
+                "constant": false,
+                "id": 5366,
+                "mutability": "mutable",
+                "name": "name",
+                "nameLocation": "170:4:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5387,
+                "src": "163:11:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 5365,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "163:6:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5368,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "194:2:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5387,
+                "src": "186:10:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5367,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "186:7:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5370,
+                "mutability": "mutable",
+                "name": "level",
+                "nameLocation": "225:5:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5387,
+                "src": "217:13:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5369,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "217:7:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5372,
+                "mutability": "mutable",
+                "name": "ar",
+                "nameLocation": "277:2:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5387,
+                "src": "272:7:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5371,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "272:4:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5376,
+                "mutability": "mutable",
+                "name": "stoneType",
+                "nameLocation": "329:9:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5387,
+                "src": "318:20:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$5_storage_ptr",
+                  "typeString": "uint256[5]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 5373,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "318:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 5375,
+                  "length": {
+                    "hexValue": "35",
+                    "id": 5374,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "326:1:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_5_by_1",
+                      "typeString": "int_const 5"
+                    },
+                    "value": "5"
+                  },
+                  "nodeType": "ArrayTypeName",
+                  "src": "318:10:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$5_storage_ptr",
+                    "typeString": "uint256[5]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5380,
+                "mutability": "mutable",
+                "name": "stone",
+                "nameLocation": "360:5:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5387,
+                "src": "349:16:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$5_storage_ptr",
+                  "typeString": "uint256[5]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 5377,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "349:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 5379,
+                  "length": {
+                    "hexValue": "35",
+                    "id": 5378,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "357:1:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_5_by_1",
+                      "typeString": "int_const 5"
+                    },
+                    "value": "5"
+                  },
+                  "nodeType": "ArrayTypeName",
+                  "src": "349:10:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$5_storage_ptr",
+                    "typeString": "uint256[5]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5384,
+                "mutability": "mutable",
+                "name": "wearables",
+                "nameLocation": "417:9:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5387,
+                "src": "406:20:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$3_storage_ptr",
+                  "typeString": "uint256[3]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 5381,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "406:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 5383,
+                  "length": {
+                    "hexValue": "33",
+                    "id": 5382,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "414:1:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_3_by_1",
+                      "typeString": "int_const 3"
+                    },
+                    "value": "3"
+                  },
+                  "nodeType": "ArrayTypeName",
+                  "src": "406:10:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$3_storage_ptr",
+                    "typeString": "uint256[3]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5386,
+                "mutability": "mutable",
+                "name": "alreadyMinted",
+                "nameLocation": "502:13:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5387,
+                "src": "497:18:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 5385,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "497:4:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Avatar",
+            "nameLocation": "145:6:31",
+            "nodeType": "StructDefinition",
+            "scope": 5444,
+            "src": "138:441:31",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "BaseStructs.Stone",
+            "id": 5398,
+            "members": [
+              {
+                "constant": false,
+                "id": 5389,
+                "mutability": "mutable",
+                "name": "name",
+                "nameLocation": "618:4:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5398,
+                "src": "611:11:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 5388,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "611:6:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5391,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "642:2:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5398,
+                "src": "634:10:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5390,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "634:7:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5393,
+                "mutability": "mutable",
+                "name": "level",
+                "nameLocation": "673:5:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5398,
+                "src": "665:13:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5392,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "665:7:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5395,
+                "mutability": "mutable",
+                "name": "ar",
+                "nameLocation": "725:2:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5398,
+                "src": "720:7:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5394,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "720:4:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5397,
+                "mutability": "mutable",
+                "name": "stoneType",
+                "nameLocation": "855:9:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5398,
+                "src": "847:17:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5396,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "847:7:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Stone",
+            "nameLocation": "594:5:31",
+            "nodeType": "StructDefinition",
+            "scope": 5444,
+            "src": "587:285:31",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "BaseStructs.Wearable",
+            "id": 5407,
+            "members": [
+              {
+                "constant": false,
+                "id": 5400,
+                "mutability": "mutable",
+                "name": "name",
+                "nameLocation": "915:4:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5407,
+                "src": "908:11:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 5399,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "908:6:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5402,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "939:2:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5407,
+                "src": "931:10:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5401,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "931:7:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5404,
+                "mutability": "mutable",
+                "name": "ar",
+                "nameLocation": "1004:2:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5407,
+                "src": "999:7:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5403,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "999:4:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5406,
+                "mutability": "mutable",
+                "name": "wearableType",
+                "nameLocation": "1061:12:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5407,
+                "src": "1053:20:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5405,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1053:7:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Wearable",
+            "nameLocation": "887:8:31",
+            "nodeType": "StructDefinition",
+            "scope": 5444,
+            "src": "880:201:31",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "BaseStructs.NFTPoolInfo",
+            "id": 5412,
+            "members": [
+              {
+                "constant": false,
+                "id": 5409,
+                "mutability": "mutable",
+                "name": "quantity",
+                "nameLocation": "1127:8:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5412,
+                "src": "1119:16:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5408,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1119:7:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5411,
+                "mutability": "mutable",
+                "name": "cost",
+                "nameLocation": "1154:4:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5412,
+                "src": "1146:12:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5410,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1146:7:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "NFTPoolInfo",
+            "nameLocation": "1096:11:31",
+            "nodeType": "StructDefinition",
+            "scope": 5444,
+            "src": "1089:77:31",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "BaseStructs.WearableType",
+            "id": 5416,
+            "members": [
+              {
+                "id": 5413,
+                "name": "HEAD",
+                "nameLocation": "1252:4:31",
+                "nodeType": "EnumValue",
+                "src": "1252:4:31"
+              },
+              {
+                "id": 5414,
+                "name": "BODY",
+                "nameLocation": "1267:4:31",
+                "nodeType": "EnumValue",
+                "src": "1267:4:31"
+              },
+              {
+                "id": 5415,
+                "name": "LEGS",
+                "nameLocation": "1282:4:31",
+                "nodeType": "EnumValue",
+                "src": "1282:4:31"
+              }
+            ],
+            "name": "WearableType",
+            "nameLocation": "1179:12:31",
+            "nodeType": "EnumDefinition",
+            "src": "1174:119:31"
+          },
+          {
+            "canonicalName": "BaseStructs.StoneType",
+            "id": 5422,
+            "members": [
+              {
+                "id": 5417,
+                "name": "REPARITE",
+                "nameLocation": "1327:8:31",
+                "nodeType": "EnumValue",
+                "src": "1327:8:31"
+              },
+              {
+                "id": 5418,
+                "name": "ENIGMA",
+                "nameLocation": "1346:6:31",
+                "nodeType": "EnumValue",
+                "src": "1346:6:31"
+              },
+              {
+                "id": 5419,
+                "name": "STRATAGEM",
+                "nameLocation": "1363:9:31",
+                "nodeType": "EnumValue",
+                "src": "1363:9:31"
+              },
+              {
+                "id": 5420,
+                "name": "CHIPPYFY",
+                "nameLocation": "1383:8:31",
+                "nodeType": "EnumValue",
+                "src": "1383:8:31"
+              },
+              {
+                "id": 5421,
+                "name": "VICTORIUM",
+                "nameLocation": "1402:9:31",
+                "nodeType": "EnumValue",
+                "src": "1402:9:31"
+              }
+            ],
+            "name": "StoneType",
+            "nameLocation": "1306:9:31",
+            "nodeType": "EnumDefinition",
+            "src": "1301:144:31"
+          },
+          {
+            "canonicalName": "BaseStructs.RarityRow",
+            "id": 5428,
+            "members": [
+              {
+                "constant": false,
+                "id": 5424,
+                "mutability": "mutable",
+                "name": "rarity2",
+                "nameLocation": "1489:7:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5428,
+                "src": "1481:15:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5423,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1481:7:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5427,
+                "mutability": "mutable",
+                "name": "boxRarity",
+                "nameLocation": "1517:9:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5428,
+                "src": "1507:19:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                  "typeString": "uint256[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 5425,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1507:7:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 5426,
+                  "nodeType": "ArrayTypeName",
+                  "src": "1507:9:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                    "typeString": "uint256[]"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "RarityRow",
+            "nameLocation": "1460:9:31",
+            "nodeType": "StructDefinition",
+            "scope": 5444,
+            "src": "1453:81:31",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "BaseStructs.BoxInfo",
+            "id": 5435,
+            "members": [
+              {
+                "constant": false,
+                "id": 5430,
+                "mutability": "mutable",
+                "name": "tokenRarity",
+                "nameLocation": "1576:11:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5435,
+                "src": "1568:19:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5429,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1568:7:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5432,
+                "mutability": "mutable",
+                "name": "objKey",
+                "nameLocation": "1606:6:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5435,
+                "src": "1598:14:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5431,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1598:7:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5434,
+                "mutability": "mutable",
+                "name": "boxInfoCheck",
+                "nameLocation": "1630:12:31",
+                "nodeType": "VariableDeclaration",
+                "scope": 5435,
+                "src": "1625:17:31",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 5433,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1625:4:31",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "BoxInfo",
+            "nameLocation": "1549:7:31",
+            "nodeType": "StructDefinition",
+            "scope": 5444,
+            "src": "1542:108:31",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "BaseStructs.AvatarRarity",
+            "id": 5443,
+            "members": [
+              {
+                "id": 5436,
+                "name": "FREE",
+                "nameLocation": "1687:4:31",
+                "nodeType": "EnumValue",
+                "src": "1687:4:31"
+              },
+              {
+                "id": 5437,
+                "name": "COMMON",
+                "nameLocation": "1702:6:31",
+                "nodeType": "EnumValue",
+                "src": "1702:6:31"
+              },
+              {
+                "id": 5438,
+                "name": "UNCOMMON",
+                "nameLocation": "1720:8:31",
+                "nodeType": "EnumValue",
+                "src": "1720:8:31"
+              },
+              {
+                "id": 5439,
+                "name": "PRIME",
+                "nameLocation": "1740:5:31",
+                "nodeType": "EnumValue",
+                "src": "1740:5:31"
+              },
+              {
+                "id": 5440,
+                "name": "RARE",
+                "nameLocation": "1756:4:31",
+                "nodeType": "EnumValue",
+                "src": "1756:4:31"
+              },
+              {
+                "id": 5441,
+                "name": "EPIC",
+                "nameLocation": "1771:4:31",
+                "nodeType": "EnumValue",
+                "src": "1771:4:31"
+              },
+              {
+                "id": 5442,
+                "name": "LEGGENDARY",
+                "nameLocation": "1786:10:31",
+                "nodeType": "EnumValue",
+                "src": "1786:10:31"
+              }
+            ],
+            "name": "AvatarRarity",
+            "nameLocation": "1663:12:31",
+            "nodeType": "EnumDefinition",
+            "src": "1658:145:31"
+          }
+        ],
+        "scope": 5445,
+        "src": "108:1700:31",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:1775:31"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.19+commit.7dd6d404.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.15",
+  "updatedAt": "2023-10-20T15:35:45.204Z",
+  "devdoc": {
+    "custom:security-contact": "giorgio@allena.it",
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
