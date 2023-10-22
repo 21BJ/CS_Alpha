@@ -1,4 +1,4 @@
-import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Card, Grid, Tab, Tabs, TextField, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Alert, Box, Button, Card, Grid, Tab, Tabs, TextField, Typography } from "@mui/material";
 import ListButtons from "./indatas"
 import PropTypes from 'prop-types';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -23,15 +23,22 @@ export default function HomePage() {
                                                                 ]);
 
     
+    const [errorAccountNotLogged, setErrorAccountNotLogged] = React.useState([ [], [], [], [], [], []]);
+    const [sendTransactionAllert, setSendTransactionAllert] = React.useState([ [], [], [], [], [], []]);
+
+
 
     // Input ???
+    const [inputFunctions1, setInputFunctions1] = React.useState([ [], [], [], [], [], [] ]);
+    const [inputFunctions2, setInputFunctions2] = React.useState([ [], [] ]);
+    const [inputFunctions3, setInputFunctions3] = React.useState([ [], [] ]);
+    const [inputFunctions4, setInputFunctions4] = React.useState([ [], [], [], [], [], [], [], [] ]);
+    const [inputFunctions5, setInputFunctions5] = React.useState([ [], [], [] ]);
 
 
 
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-      };
+    const handleChange = (event, newValue) => { setValue(newValue); };
 
     // ListButtons
     function a11yProps(index) {
@@ -53,25 +60,59 @@ export default function HomePage() {
 
     function handleChangeTextField(indexIntExt, indexInt, indexVr, event) {
 
-        console.log("indexIntExt, indexInt: " + indexIntExt + " " + indexInt + "  --  " + indexVr )
-        console.log("event: " + event);
+        // console.log("indexIntExt, indexInt: " + indexIntExt + " " + indexInt + "  --  " + indexVr )
+        // console.log("event: " + event.target.value);
 
-        console.log(event.target.value);
+        let cp = [...inputFunctions1];
+        // console.log(cp);
 
-        setInputFunctions()
+        if (indexIntExt == 1) { let copy = [...inputFunctions1]; copy[indexInt][indexVr] = event.target.value; setInputFunctions1(copy); }
+        if (indexIntExt == 2) { let copy = [...inputFunctions2]; copy[indexInt][indexVr] = event.target.value; setInputFunctions2(copy); }
+        if (indexIntExt == 3) { let copy = [...inputFunctions3]; copy[indexInt][indexVr] = event.target.value; setInputFunctions3(copy); }
+        if (indexIntExt == 4) { let copy = [...inputFunctions4]; copy[indexInt][indexVr] = event.target.value; setInputFunctions4(copy); }
+        if (indexIntExt == 5) { let copy = [...inputFunctions5]; copy[indexInt][indexVr] = event.target.value; setInputFunctions5(copy); }
 
     }
 
     async function executeOrder66 (indexIntExt, indexInt) {
-        console.log("indexIntExt" + indexIntExt);
-        console.log("indexInt" + indexInt);
+        console.log("indexIntExt: " + indexIntExt);
+        console.log("indexInt: " + indexInt);
         console.log("account: " + account);
+        console.log("account logged ? : " + (account != ""));
 
-        // TODO: Inputs !!! 
+        // manage inputs !!! 
+        let inputArr = [];
 
-        if (account != "") await IDForApi(indexIntExt, indexInt, [], account).then(() => {
-            // Manage output
-        });
+
+
+        if (indexIntExt == 1) inputArr = inputFunctions1[indexInt];
+        if (indexIntExt == 2) inputArr = inputFunctions2[indexInt];
+        if (indexIntExt == 3) inputArr = inputFunctions3[indexInt];
+        if (indexIntExt == 4) inputArr = inputFunctions4[indexInt];
+        if (indexIntExt == 5) inputArr = inputFunctions5[indexInt];
+
+
+        console.log("inputArr: ");
+        console.log(inputArr);
+
+
+        if (account != "") {
+            // try to execute order
+            await IDForApi(indexIntExt, indexInt, inputArr, account).then((event) => {
+                console.log("Output ???");
+                console.log(event);
+                // TODO: Manage output
+
+            });
+            // Launch an response 
+            let copy = [...errorAccountNotLogged]; copy[indexIntExt][indexInt] = false; setErrorAccountNotLogged(copy);
+            let copy1 = [...sendTransactionAllert]; copy1[indexIntExt][indexInt] = true; setSendTransactionAllert(copy1);
+
+        } else {
+            // Launch an error pop-up
+            let copy = [...errorAccountNotLogged]; copy[indexIntExt][indexInt] = true; setErrorAccountNotLogged(copy);
+            let copy1 = [...sendTransactionAllert]; copy1[indexIntExt][indexInt] = false; setSendTransactionAllert(copy1);
+        }
         
     }
 
@@ -87,6 +128,17 @@ export default function HomePage() {
 
 
 
+
+
+    function getDefaultValue (indexIntExt, indexInt, indexVr) {
+
+        if (indexIntExt == 1) { return inputFunctions1[indexInt][indexVr]; }
+        if (indexIntExt == 2) { return inputFunctions2[indexInt][indexVr]; }
+        if (indexIntExt == 3) { return inputFunctions3[indexInt][indexVr]; }
+        if (indexIntExt == 4) { return inputFunctions4[indexInt][indexVr]; }
+        if (indexIntExt == 5) { return inputFunctions5[indexInt][indexVr]; }
+
+    }
 
 
 
@@ -150,6 +202,7 @@ export default function HomePage() {
                                                                         id="outlined-basic" 
                                                                         label={itemsVr.type} 
                                                                         variant="outlined" 
+                                                                        defaultValue={ getDefaultValue(indexIntExt, indexInt, indexVr) }
                                                                         onChange={(event) => { handleChangeTextField(indexIntExt, indexInt, indexVr, event) } }
                                                                     />
                                                                 </Grid>
@@ -172,6 +225,8 @@ export default function HomePage() {
                                                         <Grid item xs={4} style={{margin: "auto 10px"}}> <p> {outputFunctions[indexIntExt][indexInt]} </p></Grid>
                                                     </Grid>
                                                 </Card>
+                                                {errorAccountNotLogged[indexIntExt][indexInt] && <Alert severity="error">Make logIn first</Alert>}
+                                                {sendTransactionAllert[indexIntExt][indexInt] && <Alert severity="info" >the transaction has been processed</Alert> }
                                             </Typography>
                                             </AccordionDetails>
                                         </Accordion>
