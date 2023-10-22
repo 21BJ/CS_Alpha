@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import IDForApi from "./MetaMask/ContractAPI"
 import React from 'react';
+import PresentationPannel from "./PresentationPannel";
 
 
 
@@ -164,13 +165,28 @@ export default function HomePage() {
                                 justifyContent="center"
                                 alignItems="center"
                             >
-                                <Button 
-                                    variant="contained"
-                                    onClick={() => { connectWallet(); }}
+                                <Typography 
+                                    variant="h2"
+
                                 >
-                                    connectWallet
-                                </Button>
-                                <Typography textAlign={"center"} variant="h4" fontWeight={500}>Current signed account: <br /> {account}</Typography>
+                                    Welcome to 21BJ Alpha test
+                                </Typography>
+                                <Card
+                                    style={{
+                                        margin: "10px",
+                                        padding: "10px",
+                                        textAlign: "center"
+                                    }}
+                                >
+                                    <Button 
+                                        variant="contained"
+                                        onClick={() => { connectWallet(); }}
+                                    >
+                                        connectWallet
+                                    </Button>
+                                    <Typography textAlign={"center"} variant="h4" fontWeight={500}>Current signed account: <br /> {account}</Typography>
+                                </Card>
+                                <PresentationPannel />
                             </Grid>
                         :
                         items.functions.map((itemsInt, indexInt) => {

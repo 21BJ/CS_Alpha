@@ -18,7 +18,7 @@ export async function Sell(account, _tokenId, price) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("Sell end");
     
@@ -44,7 +44,7 @@ export async function Buy (account, _tokenId) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("Buy end");
     
@@ -70,7 +70,7 @@ export async function retireNFTFromShop (account, _tokenId ) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("RetireNFTFromShop end");
     
@@ -94,7 +94,7 @@ export async function setBaseNFTResellPrice (account, _baseNFTResellPrice) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("SetBaseNFTResellPrice end");
     
@@ -117,7 +117,7 @@ export async function getBaseNFTResellPrice (account) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("GetBaseNFTResellPrice end");
     
@@ -141,7 +141,7 @@ export async function getNFTResellPriceById (account, _tokenId) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("GetNFTResellPriceByIdBuy end");
     
@@ -165,7 +165,7 @@ export async function getShopInfoListById (account, _tokenId) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("GetShopInfoListById end");
     
@@ -188,7 +188,7 @@ export async function withdrawShop (account) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("Withdraw end");
 

@@ -18,7 +18,7 @@ export async function createANewBox(account, objKey, r1) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
 
 
     console.log("CreateANewBox end");
@@ -46,7 +46,7 @@ export async function openBox(account, boxKey ) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     // Send the transaction
     
     console.log("OpenBox end");

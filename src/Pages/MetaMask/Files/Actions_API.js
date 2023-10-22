@@ -18,7 +18,7 @@ export async function setStone(account, avatarID, stoneID, stoneSlot) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("setStone end");
 
@@ -43,7 +43,7 @@ export async function setWearables(account, avatarID, wearableID, wearableSlot )
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
         
     
     console.log("setWearables end");
@@ -71,7 +71,7 @@ export async function removeStone(account, avatarID, stoneID, stoneSlot) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("removeStone end");
 
@@ -96,7 +96,7 @@ export async function removeWearables(account, avatarID, wearableID, wearableSlo
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("removeWearables end");
     
@@ -122,7 +122,7 @@ export async function getStoneInfo(account, avatarID, stoneSlot) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("getStoneInfo end");
 
@@ -147,7 +147,7 @@ export async function getWearableInfo(account, avatarID, wearableSlot ) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("getWearableInfo end");
 

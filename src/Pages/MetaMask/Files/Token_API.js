@@ -18,7 +18,7 @@ export async function BuyToken(account, amount) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n");  output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n");  output = error; });
     
     console.log("BuyToken end");
 
@@ -43,7 +43,7 @@ export async function getBalance(account) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("getBalance end");
 
@@ -67,7 +67,7 @@ export async function withdraw(account) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("withdraw Token end");
 
@@ -92,7 +92,7 @@ export async function getPriceForUnit(account) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("getPriceForUnit Token end");
 

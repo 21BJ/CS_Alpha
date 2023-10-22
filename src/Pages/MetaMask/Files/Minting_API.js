@@ -18,7 +18,7 @@ export async function mintingAvatar(account, idNFT1, idNFT2) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("mintingAvatar end");
 
@@ -44,7 +44,7 @@ export async function canBeMinted(account, idNFT1, idNFT2) {
         ]
     })
     .then((result) => { console.log("Result: " + result + "\n"); output = result; })
-    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
+    .catch((error) => { console.log("Error: " + error + "\n"); output = error; });
     
     console.log("canBeMinted end");
 
