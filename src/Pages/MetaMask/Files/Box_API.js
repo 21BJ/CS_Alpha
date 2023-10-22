@@ -3,6 +3,8 @@ require('dotenv').config({ path: './../../../../.env' })
 
 export async function createANewBox(account, objKey, r1) {
     
+    let output = "";
+    
     console.log("CreateANewBox start");
     
     window.ethereum.request({
@@ -15,18 +17,22 @@ export async function createANewBox(account, objKey, r1) {
             },
         ]
     })
-    .then((result) => { console.log("Result: " + result + "\n"); })
-    .catch((error) => { console.log("Error: " + error + "\n"); });
+    .then((result) => { console.log("Result: " + result + "\n"); output = result; })
+    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
 
 
     console.log("CreateANewBox end");
 
+    
+    return output;
 }
 
 
 
 export async function openBox(account, boxKey ) {
  
+    let output = "";
+    
     console.log("openBox start");
 
     window.ethereum.request({
@@ -39,10 +45,12 @@ export async function openBox(account, boxKey ) {
             },
         ]
     })
-    .then((result) => { console.log("Result: " + result + "\n"); })
-    .catch((error) => { console.log("Error: " + error + "\n"); });
+    .then((result) => { console.log("Result: " + result + "\n"); output = result; })
+    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
     // Send the transaction
     
     console.log("OpenBox end");
 
+    
+    return output;
 }

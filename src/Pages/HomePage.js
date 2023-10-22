@@ -12,7 +12,6 @@ export default function HomePage() {
 
 
     const [value, setValue] = React.useState(0);
-    // TODO: manage outputs !!! 
     const [outputFunctions, setOutputFunctions] = React.useState([
                                                                     [],
                                                                     [],
@@ -101,8 +100,7 @@ export default function HomePage() {
             await IDForApi(indexIntExt, indexInt, inputArr, account).then((event) => {
                 console.log("Output ???");
                 console.log(event);
-                // TODO: Manage output
-
+                let copy = [...outputFunctions]; copy[indexIntExt][indexInt] = event; setOutputFunctions(copy);
             });
             // Launch an response 
             let copy = [...errorAccountNotLogged]; copy[indexIntExt][indexInt] = false; setErrorAccountNotLogged(copy);

@@ -3,6 +3,8 @@ require('dotenv').config({ path: './../../../../.env' })
 
 export async function mintingAvatar(account, idNFT1, idNFT2) {
 
+    let output = "";
+    
     console.log("mintingAvatar start");
     
     window.ethereum.request({
@@ -15,16 +17,20 @@ export async function mintingAvatar(account, idNFT1, idNFT2) {
             },
         ]
     })
-    .then((result) => { console.log("Result: " + result + "\n"); })
-    .catch((error) => { console.log("Error: " + error + "\n"); });
+    .then((result) => { console.log("Result: " + result + "\n"); output = result; })
+    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
     
     console.log("mintingAvatar end");
 
+    
+    return output;
 }
 
 
 export async function canBeMinted(account, idNFT1, idNFT2) {
 
+    let output = "";
+    
     console.log("canBeMinted start");
     
     window.ethereum.request({
@@ -37,11 +43,13 @@ export async function canBeMinted(account, idNFT1, idNFT2) {
             },
         ]
     })
-    .then((result) => { console.log("Result: " + result + "\n"); })
-    .catch((error) => { console.log("Error: " + error + "\n"); });
+    .then((result) => { console.log("Result: " + result + "\n"); output = result; })
+    .catch((error) => { console.log("Error: " + error + "\n"); output = result; });
     
     console.log("canBeMinted end");
 
+    
+    return output;
 }
 
 
